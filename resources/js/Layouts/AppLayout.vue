@@ -196,6 +196,9 @@
           >
             Dashboard
           </jet-responsive-nav-link>
+          <jet-responsive-nav-link href="/users">
+            Users
+          </jet-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

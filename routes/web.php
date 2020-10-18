@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\HomeController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',  [HomeController::class, 'index']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DataController::class, 'index'])->name('dashboard');

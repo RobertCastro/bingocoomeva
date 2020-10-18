@@ -2671,10 +2671,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['active', 'href', 'as'],
+  props: ["active", "href", "as"],
   computed: {
     classes: function classes() {
-      return this.active ? 'block pl-3 pr-4 py-2 border-l-4 border-indigo-400 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out' : 'block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out';
+      return this.active ? "block pl-3 pr-4 py-2 border-l-4 border-indigo-400 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out" : "block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out";
     }
   }
 });
@@ -2732,8 +2732,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["data"],
   components: {
     JetApplicationLogo: _Jetstream_ApplicationLogo__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -2756,6 +2773,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_DropdownLink__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../Jetstream/DropdownLink */ "./resources/js/Jetstream/DropdownLink.vue");
 /* harmony import */ var _Jetstream_NavLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../Jetstream/NavLink */ "./resources/js/Jetstream/NavLink.vue");
 /* harmony import */ var _Jetstream_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../Jetstream/ResponsiveNavLink */ "./resources/js/Jetstream/ResponsiveNavLink.vue");
+//
+//
+//
 //
 //
 //
@@ -3473,9 +3493,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["datos"],
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     Welcome: _Jetstream_Welcome__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -24985,27 +25007,41 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "p-6 sm:px-20 bg-white border-b border-gray-200" },
+      [
+        _c("h6", [_vm._v("Jetstram.welcome")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mt-8 text-2xl" }, [
+          _vm._v("Welcome " + _vm._s(_vm.$props))
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c(
-        "div",
-        { staticClass: "p-6 sm:px-20 bg-white border-b border-gray-200" },
-        [
-          _c("div", { staticClass: "mt-8 text-2xl" }, [
-            _vm._v("Welcome to your Jetstream application!")
+    return _c("div", { staticClass: "container" }, [
+      _c("table", { staticClass: "table-auto" }, [
+        _c("thead", [
+          _c("tr", [
+            _c("th", { staticClass: "px-4 py-2" }, [_vm._v("Nombre")]),
+            _vm._v(" "),
+            _c("th", { staticClass: "px-4 py-2" }, [_vm._v("Cédula")]),
+            _vm._v(" "),
+            _c("th", { staticClass: "px-4 py-2" }, [_vm._v("#Tabla")])
           ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", {
-        staticClass: "bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2"
-      })
+        ]),
+        _vm._v(" "),
+        _c("tbody")
+      ])
     ])
   }
 ]
@@ -25449,7 +25485,11 @@ var render = function() {
                     }
                   },
                   [_vm._v("\n          Dashboard\n        ")]
-                )
+                ),
+                _vm._v(" "),
+                _c("jet-responsive-nav-link", { attrs: { href: "/users" } }, [
+                  _vm._v("\n          Users\n        ")
+                ])
               ],
               1
             ),
@@ -26418,7 +26458,7 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Dashboard\n        ")]
+                [_vm._v("\n      Usuarios " + _vm._s(_vm.name) + "\n    ")]
               )
             ]
           },
@@ -26433,7 +26473,10 @@ var render = function() {
           _c(
             "div",
             { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
-            [_c("welcome")],
+            [
+              _c("welcome", { attrs: { data: _vm.$datos } }),
+              _vm._v("\n        " + _vm._s(_vm.datos) + "\n      ")
+            ],
             1
           )
         ])
